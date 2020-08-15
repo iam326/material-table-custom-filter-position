@@ -2,13 +2,12 @@ import React from 'react';
 import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import MaterialTable from 'material-table';
+
+import Header from './components/Header';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,13 +36,7 @@ const App: React.FC = () => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute">
-        <Toolbar>
-          <Typography component="h1" variant="h6" color="inherit" noWrap>
-            Dashboard
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Header title="Sample App" />
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
