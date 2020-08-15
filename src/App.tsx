@@ -1,24 +1,24 @@
-import React from "react";
-import "./App.css";
-import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import MaterialTable from "material-table";
+import React from 'react';
+import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import MaterialTable from 'material-table';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    display: 'flex',
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    height: "100vh",
-    overflow: "auto",
+    height: '100vh',
+    overflow: 'auto',
   },
   container: {
     paddingTop: theme.spacing(4),
@@ -26,9 +26,9 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    display: "flex",
-    overflow: "auto",
-    flexDirection: "column",
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column',
   },
 }));
 
@@ -51,19 +51,19 @@ const App: React.FC = () => {
             <Paper className={classes.paper}>
               <MaterialTable
                 columns={[
-                  { title: "Adı", field: "name" },
-                  { title: "Soyadı", field: "surname" },
-                  { title: "Doğum Yılı", field: "birthYear", type: "numeric" },
+                  { title: 'Adı', field: 'name' },
+                  { title: 'Soyadı', field: 'surname' },
+                  { title: 'Doğum Yılı', field: 'birthYear', type: 'numeric' },
                   {
-                    title: "Doğum Yeri",
-                    field: "birthCity",
-                    lookup: { 34: "İstanbul", 63: "Şanlıurfa" },
+                    title: 'Doğum Yeri',
+                    field: 'birthCity',
+                    lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' },
                   },
                 ]}
                 data={[
                   {
-                    name: "Mehmet",
-                    surname: "Baran",
+                    name: 'Mehmet',
+                    surname: 'Baran',
                     birthYear: 1987,
                     birthCity: 63,
                   },
