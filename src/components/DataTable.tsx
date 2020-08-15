@@ -51,13 +51,16 @@ const DataTable: React.FC = () => {
         search: false,
         draggable: false,
         filtering: true,
+        toolbar: false,
+        showTitle: false,
       }}
       columns={[
         {
           title: 'クーポン ID',
           field: 'couponId',
+          filtering: false,
         },
-        { title: '店舗', field: 'storeName' },
+        { title: '店舗', field: 'storeName', filtering: false },
         {
           title: 'クーポン名',
           field: 'couponName',
@@ -65,21 +68,23 @@ const DataTable: React.FC = () => {
         {
           title: '割引率',
           field: 'discountRate',
+          filtering: false,
           cellStyle: { textAlign: 'right' },
         },
         {
           title: '利用開始日',
           field: 'startDate',
+          filtering: false,
           cellStyle: { textAlign: 'right' },
         },
         {
           title: '利用終了日',
           field: 'endDate',
+          filtering: false,
           cellStyle: { textAlign: 'right' },
         },
       ]}
       data={tableData}
-      title="Demo Title"
     />
   );
 };
