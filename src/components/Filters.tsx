@@ -15,7 +15,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Filters: React.FC = () => {
+type Props = {
+  inputValue: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+const Filters: React.FC<Props> = (props) => {
+  const { inputValue, onChange } = props;
   const classes = useStyles();
   return (
     <Paper className={classes.filters}>
@@ -24,7 +30,8 @@ const Filters: React.FC = () => {
           <TextField
             id="filter-coupon-name-text-field"
             label="クーポン名"
-            defaultValue=""
+            value={inputValue}
+            onChange={onChange}
           />
         </div>
       </form>

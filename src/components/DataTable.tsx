@@ -44,7 +44,12 @@ const tableData = [
   },
 ];
 
-const DataTable: React.FC = () => {
+type Props = {
+  filterValue: string;
+};
+
+const DataTable: React.FC<Props> = (props) => {
+  const { filterValue } = props;
   return (
     <MaterialTable
       options={{
@@ -53,6 +58,9 @@ const DataTable: React.FC = () => {
         filtering: true,
         toolbar: false,
         showTitle: false,
+      }}
+      components={{
+        FilterRow: () => <></>,
       }}
       columns={[
         {
@@ -64,6 +72,10 @@ const DataTable: React.FC = () => {
         {
           title: 'クーポン名',
           field: 'couponName',
+          defaultFilter: [],
+          customFilterAndSearch: (_: string, rowData: { couponName: string }) =>
+            filterValue.length === 0 ||
+            rowData.couponName.indexOf(filterValue) > -1,
         },
         {
           title: '割引率',
