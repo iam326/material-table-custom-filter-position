@@ -92,22 +92,18 @@ const MainContent: React.FC = () => {
       </Paper>
       <MaterialTable
         options={{
+          filtering: false,
           search: false,
           draggable: false,
-          filtering: true,
           toolbar: false,
           showTitle: false,
-        }}
-        components={{
-          FilterRow: () => <></>,
         }}
         columns={[
           {
             title: 'クーポン ID',
             field: 'couponId',
-            filtering: false,
           },
-          { title: '店舗', field: 'storeName', filtering: false },
+          { title: '店舗', field: 'storeName' },
           {
             title: 'クーポン名',
             field: 'couponName',
@@ -122,19 +118,16 @@ const MainContent: React.FC = () => {
           {
             title: '割引率',
             field: 'discountRate',
-            filtering: false,
             cellStyle: { textAlign: 'right' },
           },
           {
             title: '利用開始日',
             field: 'startDate',
-            filtering: false,
             cellStyle: { textAlign: 'right' },
           },
           {
             title: '利用終了日',
             field: 'endDate',
-            filtering: false,
             cellStyle: { textAlign: 'right' },
           },
         ]}
